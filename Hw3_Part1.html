@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+ <meta name="Homework 3 part 1 " content="JavaScript assignments Homework 3 part 1 Freddy at CSM">
+
+<title> Homework 3 Part 1: Student Grades </title>
+
+<!--Style of Page and Heading-->
+<style>
+    table,tr,td {
+        border: 3px solid gray;
+    }
+    body{
+        background-color: aliceblue;
+    }
+    h1 {
+        text-align: center;
+    }
+    h4 {
+        text-align: center;
+        font-size: 200%;
+    }
+    label {
+        border: black;
+    }
+    table {
+        border: darkblue;
+    }
+</style>
+<!-- function of Student Grade-->
+<script>
+    function process() {
+
+        //var number1, number2, number3,number4,n1,n2,n3,n4,ha,mtes,fes,p;
+        
+        var number1 = document.getElementById("hwAvg").value;
+        var number2 = document.getElementById("mtes").value;
+        var number3 = document.getElementById("fes").value;
+        var number4 = document.getElementById("p").value;
+        var hwAvg = parseInt(number1);
+        var mtes = parseInt(number2);
+        var fes = parseInt(number3);
+        var p = parseInt(number4);
+        var message = "";
+
+         //It must a number to input in the textarea
+        if (isNaN(hwAvg)||isNaN(mtes)||isNaN(fes)||isNaN(p)) {
+            message = " Please try again, It must be an number.";
+
+        //It need to be range of 0 or 100 to input of the grade.
+        } else if (hwAvg < 0 || hwAvg > 100
+            || mtes < 0 || mtes > 100 || fes < 0 || fes > 100 || p < 0 || p > 100 ) {
+         message = "All value must in 0 through 100.";
+        } else { 
+        hwAvg = 0.5 * hwAvg;
+
+        mtes = 0.2 * mtes;
+
+        fes = 0.2 * fes;
+
+        p = 0.1 * p;
+
+         var avg = Math.round(hwAvg + mtes + fes + p);
+        //if and if-else Statement with the Grades in the function
+
+            if(avg < 60) {
+                message = "Score: " + avg + "\nGrade: F" + "\nStudent must retake the course.";
+            } else if (avg <= 70) {
+                message = "Score: " + avg + "\nGrade: D\n" + "Student must retake the course.";
+            } else if (avg < 80) {
+                message = "Score: " + avg +"\nGrade: C\n" + "Congratulation, You pass the course.";
+            } else if (avg < 90) {
+                message = "Score: " + avg + "\nGrade: B\n " + "Congratulation, you pass the course." ;
+            } else {
+                message = "Score: " + avg + "\nGrade: A\n " + "Congratulation, you pass the course.";
+            } 
+        }
+        document.getElementById("result").value = message;
+    } 
+
+</script>
+</head>
+
+<body>
+    <!-- --> 
+    <h1> Homework 3 Part 1: Student Grades </h1>
+    <form name="myform">
+    <table>
+        <!-- The table of Student grade -->
+         <!--Homework Averge Grade start-->
+         <tr>
+        <td><label for="hwAvg"> Homework Average: </label></td>
+        <td><input type="text" name="hwAvg" id="hwAvg" size="10"></td>
+         </tr>
+         <!--Homework Averge Grade end-->
+        <!--Mid-Term Exam start-->
+        <tr>
+        <td><label for="mtes"> Mid-Term Exam Score: </label></td>
+        <td><input type="text" name="mtes" id="mtes" size="10"></td>
+        </tr>
+        <!--Mid-Term Exam end-->
+        <!--Final Exam Start-->
+        <tr>
+        <td><label for="fes"> Final Exam Score: </label></td>
+        <td><input type="text" name="fes" id="fes" size="10"></td>
+        </tr>
+        <!--Final Exam end-->
+        <!-- Participation Start-->
+            <tr>
+        <td><label for="p"> Participation: </label></td>
+        <td><input type="text" name="p" id="p" size="10"></td>
+            </tr>
+            <!-- Participation end -->
+        </table>
+        <br>
+        <textarea rows="5" cols="40" id="result"> </textarea><br>
+            <br>
+        <input type="button" onclick="process()" value="Calculate">
+        <input type="reset" value="RESET">
+    </form>
+    <h4><a href="Hw3.html"> HW3 page </a></h4>
+</body>
+</html>
+     
