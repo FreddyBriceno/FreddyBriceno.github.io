@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset= "utf-8">
+ <meta name="Homework Page 3 Part 2" content="JavaScript assignments Homework 3 part 2 Freddy at CSM">
+
+ <title> Homework 3 part 2 </title>
+<style>
+
+    div {
+        color: red;
+    }
+
+    fieldset {
+        height: 50%;
+        width: 30%;
+    }
+    th, td{
+        text-align: center;
+    }
+
+    label{
+        text-align: right;
+    }
+    body {
+        background-color: wheat;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 200%;
+    }
+    input {
+        text-align: right;
+    }
+</style>
+
+ <script>
+    //To Declaring a variable with var word.
+    var item1 = "";
+    var item2 = "";
+    var item3 = "";
+    var item4 = "";
+
+    var price1 = 20.99;
+    var price2 = 12.75;
+    var price3 = 9.95;
+    var price4 = 35.89;
+
+    var name_price1 = "";
+    var name_price2 = "";
+    var name_price3 = "";
+    var name_price4 = "";
+
+    var total_1 = 0;
+    var total_2 = 0;
+    var total_3 = 0;
+    var total_4 = 0;
+
+    var sold = 0;
+    var total_earnings = 0;
+
+    var errorMsg = "";
+
+
+    function calculate() {
+
+
+        //The values of user to enter.
+        item1 = document.getElementById("item1").value;
+        item2 = document.getElementById("item2").value;
+        item3 = document.getElementById("item3").value;
+        item4 = document.getElementById("item4").value;
+
+        if (isNaN(item1) || isNaN(item2) || isNaN(item3) || isNaN(item4)) {
+            document.getElementById("errorHtml").innerHTML = "Item field must be a number";
+        } else { 
+            document.getElementById("errorHtml").innerHTML = "";
+
+        //The values into the fields "Items Sold"
+        document.getElementById("name_price1").value = item1;
+        document.getElementById("name_price2").value = item2;
+        document.getElementById("name_price3").value = item3;
+        document.getElementById("name_price4").value = item4;
+
+        //calculate the total of each item.
+        total_1 = item1 * price1;
+        total_2 = item2 * price2;
+        total_3 = item3 * price3;
+        total_4 = item4 * price4;
+
+        //the total set of each field 'Total of the items' cloumn
+        document.getElementById("total_1").value = total_1.toFixed(2);
+        document.getElementById("total_2").value = total_2.toFixed(2);
+        document.getElementById("total_3").value = total_3.toFixed(2);
+        document.getElementById("total_4").value = total_4.toFixed(2); 
+
+        //Calcualte "Total Amount Sold" field
+        amount_sold = total_1 + total_2 + total_3 + total_4;
+
+        //The "Total Amount Sold" field
+        document.getElementById("amount_sold").value = amount_sold;
+
+        sold = Math.floor(amount_sold * 0.09);
+
+        total_earnings = amount_sold + sold + 250;
+
+        document.getElementById("weekly_earnings").value = total_earnings;
+
+        //The input of Total Amount Sold and Weekly Earnings to 
+        
+        }
+    }
+
+
+    //Function to reset the fields to enter once they press Clear form.
+function reset() {
+
+    //Rest in the form of Item tag.
+    document.getElementById("item1").value = 0;
+    document.getElementById("item2").value = 0;
+    document.getElementById("item3").value = 0;
+    document.getElementById("item4").value = 0;
+
+    //Reset of QTY Sold.
+    document.getElementById("name_price1").value = "";
+    document.getElementById("name_price2").value = "";
+    document.getElementById("name_price3").value = "";
+    document.getElementById("name_price4").value = "";
+
+    //Reset in the amount of item in Total
+    document.getElementById("total_1").value = "";
+    document.getElementById("total_2").value = "";
+    document.getElementById("total_3").value = "";
+    document.getElementById("total_4").value = "";
+
+    //Reset in the Total Amount Sold and Total Weekly Earnings
+    document.getElementById("amount_sold").value = "";
+    document.getElementById("weekly_earnings").value = "";
+
+    document.getElementById("mytotal").reset();
+}
+ </script>
+
+</head>
+
+<body>
+    <h1> Homework 3 - part 2 </h1>
+
+    <fieldset>
+        <!--The Seller's Name-->
+    <form id="myform">
+        <label for="name"> Seller's Name: </label>
+        <input type="text" name="name" id="name" size="15" required>
+        <p> For each item type the quantity sold by the Seller</p>
+
+        <!--Form of quantity sold in the item-->
+
+    <!--item 1-->
+    <label for="item1"> Item 1: </label>
+    <input type="number" name="item1" id="item1" min="0"><br>
+    <!--item 2-->
+    <label for="item2"> Item 2: </label>
+    <input type="number" name="item2" id="item2" min="0"><br>
+    <!--item 3-->
+    <label for="item3"> Item 3: </label>
+    <input type="number" name="item3" id="item3"><br>
+    <!--item 4 -->
+    <label for="item4"> Item 4: </label>
+    <input type="number" name="item4" id="item4" min="0"><br>
+    <div id="errorHtml"> </div>
+    </form>
+    <input type="submit" onclick="calculate()" value="Submit"><br>
+    <input type="reset" value="Clear Form" onclick="reset()"><br>
+
+    <table id="mytotal">
+        <tr>
+         <th>Item#</th>
+         <th>Price</th>
+         <th>Qty Sold</th>
+         <th>Total</th>
+        </tr>
+
+        <tr>
+            <th><label for="name_price1"> 1 </label></th>
+            <th><label for="name_price1"> $20.99 </label></th>
+            <td><input type="text" name="name_price1" id="name_price1" size="20"></td>
+            <td><input type="text" name="total_1" id="total_1" size="20"></td>
+        </tr>
+        <tr>
+            <th><label for="name_price2"> 2 </label></th>
+            <th><label for="name_price2">$12.75 </label></th>
+            <td><input type="text" name="name_price2" id="name_price2" size="20"></td>
+            <td><input type="text" name="total_2" id="total_2" size="20"></td>
+        </tr>
+        <tr>
+            <th><label for="name_price3"> 3 </label></th>
+            <th><label for="name_price3"> $9.95 </label></th>
+            <td><input type="text" name="name_price3" id="name_price3" size="20"></td>
+            <td><input type="text" name="total_3" id="total_3" size="20"></td>
+        </tr>
+        <tr>
+            <th><label for="name_price4"> 4 </label></th>
+            <th><label for="name_price4"> $35.89 </label></th>
+            <td><input type="text" name="name_price4" id="name_price4" size="20"></td>
+            <td><input type="text" name="total_4" id="total_4" size="20"></td>
+        </tr>
+
+        <tr>
+            <th colspan="3"><label for="amount_sold"> Total Amount Sold </label></th>
+            <td><input type="text" name="amount_sold" id="amount_sold" size="20" ></td>
+        </tr>
+        <tr>
+            <th colspan="3"><label for="weekly_earnings"> Total Weekly Earnings </label></th>
+            <td><input type="text" name="weekly_earnings" id="weekly_earnings" size="20"></td>
+        </tr>
+    </table>
+    </fieldset>
+    <h3><a href="Hw3.html"> HW3 Page </a></h3>
+</body>
+</html>
