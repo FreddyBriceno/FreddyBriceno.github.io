@@ -31,9 +31,8 @@
 <!-- function of Student Grade-->
 <script>
     function process() {
-
-        //var number1, number2, number3,number4,n1,n2,n3,n4,ha,mtes,fes,p;
-        
+     
+        // Global variables of start the function.
         var number1 = document.getElementById("hwAvg").value;
         var number2 = document.getElementById("mtes").value;
         var number3 = document.getElementById("fes").value;
@@ -53,6 +52,7 @@
             || mtes < 0 || mtes > 100 || fes < 0 || fes > 100 || p < 0 || p > 100 ) {
          message = "All value must in 0 through 100.";
         } else { 
+         
         hwAvg = 0.5 * hwAvg;
 
         mtes = 0.2 * mtes;
@@ -62,8 +62,8 @@
         p = 0.1 * p;
 
          var avg = Math.round(hwAvg + mtes + fes + p);
+         
         //if and if-else Statement with the Grades in the function
-
             if(avg < 60) {
                 message = "Score: " + avg + "\nGrade: F" + "\nStudent must retake the course.";
             } else if (avg <= 70) {
@@ -78,12 +78,12 @@
         }
         document.getElementById("result").value = message;
     } 
-
 </script>
+ 
 </head>
 
 <body>
-    <!-- --> 
+ 
     <h1> Homework 3 Part 1: Student Grades </h1>
     <form name="myform">
     <table>
