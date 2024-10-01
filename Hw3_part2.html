@@ -67,7 +67,8 @@
     var sold = 0;
     var total_earnings = 0;
 
-    var errorMsg = "";
+    var errorMsg = "Item field must be Number";
+
 
     function calculate() {
 
@@ -77,10 +78,13 @@
         item3 = document.getElementById("item3").value;
         item4 = document.getElementById("item4").value;
 
-        if (isNaN(item1) || isNaN(item2) || isNaN(item3) || isNaN(item4)) {
+        if (isNaN(item1) ||isNaN(item2) || isNaN(item3) || isNaN(item4)
+            || item1 ==='' || item2 ==='' || item3 ==='' || item4 ==='') {
             document.getElementById("errorHtml").innerHTML = "Item field must be a number";
         } else { 
             document.getElementById("errorHtml").innerHTML = "";
+
+
 
         //The values into the fields "Items Sold"
         document.getElementById("name_price1").value = item1;
@@ -100,11 +104,13 @@
         document.getElementById("total_3").value = total_3.toFixed(2);
         document.getElementById("total_4").value = total_4.toFixed(2); 
 
+
         //Calcualte "Total Amount Sold" field
         amount_sold = total_1 + total_2 + total_3 + total_4;
 
+
         //The "Total Amount Sold" field
-        document.getElementById("amount_sold").value = amount_sold;
+        document.getElementById("amount_sold").value = amount_sold.toFixed(2);
 
         //With amount sold in total with 0.09%.
         sold = Math.floor(amount_sold * 0.09);
@@ -113,7 +119,7 @@
         total_earnings = amount_sold + sold + 250;
 
         //Display the result in the the Total Weekly Earnings field.
-        document.getElementById("weekly_earnings").value = total_earnings;
+        document.getElementById("weekly_earnings").value = total_earnings.toFixed(2);
 
         
         }
@@ -123,10 +129,10 @@
 function reset() {
 
     //Rest in the form of Item tag.
-    document.getElementById("item1").value = 0;
-    document.getElementById("item2").value = 0;
-    document.getElementById("item3").value = 0;
-    document.getElementById("item4").value = 0;
+    document.getElementById("item1").value = '';
+    document.getElementById("item2").value = '';
+    document.getElementById("item3").value = '';
+    document.getElementById("item4").value = '';
 
     //Reset of QTY Sold.
     document.getElementById("name_price1").value = "";
@@ -164,16 +170,16 @@ function reset() {
 
     <!--item 1-->
     <label for="item1"> Item 1: </label>
-    <input type="number" name="item1" id="item1" min="0"><br>
+    <input type="number" name="item1" id="item1" value="" min="0"><br>
     <!--item 2-->
     <label for="item2"> Item 2: </label>
-    <input type="number" name="item2" id="item2" min="0"><br>
+    <input type="number" name="item2" id="item2" value="" min="0"><br>
     <!--item 3-->
     <label for="item3"> Item 3: </label>
-    <input type="number" name="item3" id="item3" min="0"><br>
+    <input type="number" name="item3" id="item3" value="" min="0"><br>
     <!--item 4 -->
     <label for="item4"> Item 4: </label>
-    <input type="number" name="item4" id="item4" min="0"><br>
+    <input type="number" name="item4" id="item4" value="" min="0"><br>
     <div id="errorHtml"> </div>
     </form>
     <input type="submit" onclick="calculate()" value="Submit"><br>
@@ -187,7 +193,7 @@ function reset() {
          <th>Qty Sold</th>
          <th>Total</th>
         </tr>
-        
+
         <tr>
             <!-- Item 1 in the Total amount-->
             <th><label for="name_price1"> 1 </label></th>
