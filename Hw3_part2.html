@@ -78,6 +78,7 @@
         item3 = document.getElementById("item3").value;
         item4 = document.getElementById("item4").value;
 
+        // If there no input in the field,the function will not start with blake input.
         if (isNaN(item1) ||isNaN(item2) || isNaN(item3) || isNaN(item4)
             || item1 ==='' || item2 ==='' || item3 ==='' || item4 ==='') {
             document.getElementById("errorHtml").innerHTML = "Item field must be a number";
@@ -92,13 +93,13 @@
         document.getElementById("name_price3").value = item3;
         document.getElementById("name_price4").value = item4;
 
-        //calculate the total of each item.
+        //Calculate the total of each item.
         total_1 = item1 * price1;
         total_2 = item2 * price2;
         total_3 = item3 * price3;
         total_4 = item4 * price4;
 
-        //the total set of each field 'Total of the items' cloumn
+        //The total set of each field 'Total of the items' cloumn
         document.getElementById("total_1").value = total_1.toFixed(2);
         document.getElementById("total_2").value = total_2.toFixed(2);
         document.getElementById("total_3").value = total_3.toFixed(2);
@@ -115,7 +116,7 @@
         //With amount sold in total with 0.09%.
         sold = Math.floor(amount_sold * 0.09);
 
-        //together with add 250 in the result.
+        //Together with add 250 in the result.
         total_earnings = amount_sold + sold + 250;
 
         //Display the result in the the Total Weekly Earnings field.
@@ -129,7 +130,7 @@
 function reset() {
 
     //Rest in the form of Item tag.
-    document.getElementById("item1").value = '';
+    document.getElementById("item1").value = "";
     document.getElementById("item2").value = '';
     document.getElementById("item3").value = '';
     document.getElementById("item4").value = '';
@@ -204,7 +205,7 @@ function reset() {
         <tr>
             <!-- Item 2 in the Total amount-->
             <th><label for="name_price2"> 2 </label></th>
-            <th><label for="name_price2">$12.75 </label></th>
+            <th><label for="name_price2"> $12.75 </label></th>
             <td><input type="text" name="name_price2" id="name_price2" size="20"></td>
             <td><input type="text" name="total_2" id="total_2" size="20"></td>
         </tr>
