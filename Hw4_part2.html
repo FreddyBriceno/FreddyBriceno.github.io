@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 4 Part 2: Looping Statement" content="JavaScript assignments Homework 4 Part 2 Freddy at CSM">
+
+<title> Homework 4 Part 2: Looping Statement </title>
+<style>
+    body {
+        background-color: mintcream;
+    }
+
+    table {
+        background-color: white;
+        border: 1px solid black;
+        width: 30%;
+        margin: auto;
+
+    }
+
+    tr:nth-child(odd) {
+        background-color: powderblue;
+    }
+
+    td {
+        text-align: right;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+    
+</style>
+</head>
+
+<body>
+    <h1> Learn about Compound interest </h1>
+
+    <!-- The Table of 5% interest Rate -->
+    <h2> The Table of 5% interest rate </h2>
+    <script>
+        //The function of calculate of the interest rate.
+            let p = 1000;
+            let rate = [0.05,0.06,0.07];
+            let year = 5;
+
+            //ccalculate in the table of 5% , 6%, and 7% 
+            for (var r = 0; r < rate.length; r++) {
+            document.writeln("<table>"); // the table of the compund interest 
+            document.writeln("<thead><tr>"); // the head of the table.
+            document.writeln("<th>year</th>");
+            document.writeln("<th>Amount Calculated</th>");
+            document.writeln("<th> Interest Rate </th>");
+            document.writeln("</tr></thead>"); // end of the head table
+            document.writeln("<tbody>"); // // the body of the table 
+                for (var i = 1; i <= year; i++) { // calculate of years and looping the table.
+                    document.writeln("<tr>");
+                        var amount = p * Math.pow((1 + rate[r]) , i); // calculate the amount.
+                        document.writeln("<td>" + i + "</td>");
+                        document.writeln("<td>" + amount.toFixed(2) + "</td>");
+                        document.writeln("<td>" + rate[r] + "</td></tr>");
+                    }
+                document.writeln("</tbody> <br> </table>");//end of the body table.
+            }
+    </script>
+    <br>
+<br>
+    <h2><a href="Hw4.html"> Homework 4 wedpage</a></h2>
+</body>
+</html>
