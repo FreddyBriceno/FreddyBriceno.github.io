@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 4 Part 1: Looping Statement" content="JavaScript assignments Homework 4 Part 1 Freddy at CSM">
+
+<title> Homework 4 Part 1: Looping Statement </title>
+
+<!-- Style of webpage -->
+<style>
+
+    body {
+        background-color: blanchedalmond;
+    }
+
+    h1 {
+        text-align: center;
+        border-color: cornflowerblue;
+        border-style: solid;
+        background-color: white;
+        height: 50%;
+        width: 50%;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto;
+    }
+
+    h2 {
+        border-style: ridge;
+        background-color: khaki;
+        text-align: center;
+        height: 50%;
+        width: 50%;
+        margin: auto;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    div {
+        background-color: rgb(209, 217, 238);
+        width: 40%;
+        height: 40%;
+        box-shadow: 10px 10px;
+        padding: 40px;
+        text-align: center;
+        margin: auto;
+    }
+
+</style>
+
+<script>
+
+//The of function with "For" Statement
+function forloop() {
+    var sum = 0;
+    var product = 1;
+    var sumResult = "The result of ";
+    var productResult = "The result of ";
+
+    // calculate the sum and product for "for".
+    for (var number = 5; number <= 25; number += 4) {
+        sum += number;
+        product *= number;
+
+        sumResult += number;
+        productResult += number;
+
+        if (number < 25) {
+            sumResult += " + ";
+            productResult += " * ";
+        }
+    }
+
+    //The result of sum and product of "for" statement.
+    sumResult += " is " + sum.toLocaleString();
+    productResult += " is " + product.toLocaleString();
+
+    document.getElementById("outputforloop").innerHTML = productResult + "<br>" + sumResult;
+}
+
+
+//The function with "While" or "do-while" Statement
+function whileloop() {
+    var sum = 0;
+    var product = 1;
+    var sumResult = "The result of ";
+    var productResult = "The result of ";
+    var number = 3;
+
+    //calculate the sum and product for "while or do-while".
+    while (number <= 18) {
+
+        sum += number;
+        product *= number;
+
+        sumResult += number;
+        productResult += number;
+
+        if (number < 18) {
+            sumResult += " + ";
+            productResult += " * ";
+        }
+        number += 3;
+    }
+
+    //The result of sum and product of "while or do-while" statement
+    sumResult += " is " + sum.toLocaleString();
+    productResult += " is " + product.toLocaleString();
+
+    var message = productResult + "<br>" + sumResult;
+    document.getElementById("outputwhileloop").innerHTML = message;
+}
+</script>
+</head>
+
+<!--The main webpage-->
+<body>
+    <!--The title of this webpage -->
+    <h1>Homework 4 Part 1 Looping: "for" and "while" or "do-while" Statement</h1>
+
+    <h3>The result of using "for" statement</h3>
+    <div id="outputforloop"></div>
+<br>
+<h3>The result of using "while or do-while" statement</h3>
+    <div id="outputwhileloop"></div>
+<br>
+    <h2><a href="Hw4.html"> Homework 4 webpage </a></h2>
+
+ <script>
+    window.onload = function() {
+    forloop();
+    whileloop();
+    }
+ </script>
+
+</body>
+</html>
