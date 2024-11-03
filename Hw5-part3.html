@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 5 webpage" content="JavaScript assignments Homework 5 part 3 webpage Freddy at CSM">
+
+<title> Homework 5 Array part 3: Data State List </title>
+
+<style>
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+    body {
+        background-color: antiquewhite;
+
+    }
+
+    table, td, th {
+        border-collapse: collapse;
+        border-style: solid;
+        width: 30%;
+    }
+
+    tr:nth-child(odd) {
+        background-color: lightcyan;
+    }
+</style>
+
+<script>
+    //The List of the State Name and AbbreviatiOn States.
+const StateArray = [ ["AL", "Alabama", "Montgomery", "4,903,185"],
+["AK", "Alaska", "Juneau", "731,545"],
+["AZ", "Arizona", "Phoenix", "7,278,717"],
+["AR", "Arkansas", "Little Rock", "3,017,825"],
+["CA", "California", "Sacramento", "39,512,223"],
+["CO", "Colorado", "Denver", "5,758,736"] ];
+
+function selectState() {
+
+    //searchState from form input box.
+    var searchState = document.forms["SearchName"].elements["stateInput"].value;
+
+    //Search key with uppercase.
+    searchState = searchState.toUpperCase();
+
+
+    var find  = false;
+    for (var row = 0; row < StateArray.length; row++) {
+
+        if ((StateArray[row][0].toUpperCase() == searchState) || (StateArray[row][1].toUpperCase() == searchState)) {
+
+            //The result of with State Abbr, State Name, Capital, and Popualtion.
+        document.forms["SearchName"].elements["result"].value = "Thanks for your inquiry, here is the information you requested: " +
+        "\nState Abbr = " + StateArray[row][0] +
+        "\nState Name = " + StateArray[row][1] +
+        "\nCapital = " + StateArray[row][2] +
+        "\nPopulation = " + StateArray[row][3];
+        row = StateArray.length;
+        find = true;
+        }
+    } 
+    //If there "No" State Abbr or State Name the result will have error display in the textbox.
+    if (find == false) {
+        document.forms["SearchName"].elements["result"].value = "Sorry, we do not have information about this state!"
+        "We only have information about"
+    }
+
+}
+</script>
+</head>
+<body>
+    <h1> Homework 5 part 3: Data State List </h1>
+<section>
+    <!--The Table of the State -->
+    <h3> Names of the State:</h3>
+    <table>
+        <tr>
+            <!-- Header of the Table-->
+            <th>State Abbr </th>
+            <th>State Name </th>
+            <th>Capital </th>
+            <th>Population </th>
+        </tr>
+        <tr>
+            <!-- Alabama Data -->
+            <td> AL </td>
+            <td> Alabama </td>
+            <td> Montgomery </td>
+            <td> 4,903,185</td>
+        </tr>
+        <tr>
+            <!-- Alaska Data -->
+            <td> AK </td>
+            <td> Alaska </td>
+            <td> Juneau </td>
+            <td> 732,545 </td>
+        </tr>
+        <tr>
+            <!-- Arizona Data -->
+            <td> AZ </td>
+            <td> Arizona </td>
+            <td> Phoenix </td>
+            <td> 7,278,717 </td>
+        </tr>
+        <tr>
+            <!-- Arkansas Data -->
+            <td> AR </td>
+            <td> Arkansas </td>
+            <td> Little Rock </td>
+            <td> 3,017,825 </td>
+        </tr>
+        <tr>
+            <!-- California Data -->
+            <td> CA </td>
+            <td> California </td>
+            <td> Sacramento </td>
+            <td> 39,512,223 </td>
+        </tr>
+        <tr>
+            <!-- Colorado Data -->
+            <td> CO </td>
+            <td> Colorado </td>
+            <td> Denver </td>
+            <td> 5,758,736 </td>
+        </tr>
+    </table>
+    <br>
+    <!-- The users input of the data -->
+    <label> Enter State Name: </label>
+    <form name="SearchName">
+        <input type="text" size="15" name="stateInput" autofocus>
+        <input onclick="selectState();" type="button" value="State Info" name="input">
+        <input type="reset" onclick="location.reload();">
+    <br><br>
+    <!--The Result of the lsit States -->
+    <label for="result"> Result of the State:</label><br>
+    <textarea rows="7" cols="50" id="result" name="result"></textarea>
+    </form>
+</section>
+    <h2><a href="Hw5.html"> Homework 5 webpage</a></h2>
+</body>
+</html>
