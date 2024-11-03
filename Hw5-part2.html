@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 5 webpage" content="JavaScript assignments Homework 5 part 2 webpage Freddy at CSM">
+
+<title> Homework 5 Array: part 2  </title>
+
+<style>
+    body {
+        background-color: antiquewhite;
+    }
+h1 {
+    text-align: center;
+
+}
+
+h2 { 
+    text-align: center;
+}
+
+
+</style>
+<script>
+    //The First function is OnChange Events, which uses the "option[] Arrays". 
+    //It selects a website and then goes directly to the actual website. 
+    function selectChange(listform) {
+        var MySelect = listform.selectList.options[listform.selectList.selectedIndex].value;
+        window.location = MySelect;
+    }
+
+    //The Second function is OnClick Events.
+    //It uses the "option[] Arrays"to let users select a website and click the Submit button to go to that website.
+    function selectClick(dataform) {
+        var MyClick = dataform.clickData.options[dataform.clickData.selectedIndex].value;
+        window.location = MyClick;
+    }
+
+</script>
+</head>
+<body>
+<h1> Array pulldown menu </h1>
+
+<h1> Using "onChange" in this pulldown menu</h1>
+<form id="DataList">
+    <!-- The "onChange" lets users select and go directly to the website.-->
+<select id="selectList" onchange="selectChange(this.form)">
+    <option value=" "> -- Select one-- </option>
+    <option value="http://www.google.com"> Google </option>
+    <option value="http://www.yahoo.com"> Yahoo </option>
+    <option value="http://www.amazon.com"> Amazon </option>
+</select>
+
+<br>
+<br>
+<h1> Using "onClick" in this pulldown menu</h1>
+
+<!-- The "onClick" is lets users select the website and goes the button that directly to the website. -->
+<select id="clickData">
+    <option value=" ">-- Select one --</option>
+    <option value="https://www.w3schools.com"> W3schools </option>
+    <option value="https://www.youtube.com"> YouTube </option>
+    <option value="https://www.khanacademy.org"> Khan Academy </option>
+
+</select>
+<br>
+<input type="button" name="Submit" onclick="selectClick(this.form);" value="Click It">
+</form>
+    <h2><a href="Hw5.html"> Homework 5 webpage</a></h2>
+</body>
+</html>

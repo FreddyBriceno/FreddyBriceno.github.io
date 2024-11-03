@@ -1,0 +1,27 @@
+body{
+    background-color: whitesmoke;
+}
+
+
+h1 {
+    background-color: lightgray;
+    border: solid lightblue;
+    font-size: 200%;
+    height: 50%;
+    width: 50%;
+    border-width: 5px;
+    text-align: center;
+    margin: auto;
+}
+
+h2 {
+    border-style: ridge;
+    background-color: honeydew;
+    font-size: 170%;
+    border-radius: 50px;
+    height: 50%;
+    width: 50%;
+    border-width: 5px;
+    text-align: center;
+    margin: auto;
+}
