@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 5 webpage" content="JavaScript assignments Homework 5 part 1 webpage Freddy at CSM">
+
+<title> Homework 5 Array: </title>
+<style>
+
+    body{
+        background-color: azure;
+    }
+    h1 {
+        text-align: center;
+        border-style: solid;
+        background-color: white;
+        margin: auto;
+        width: 500px;
+
+    }
+    h2 {
+        border-style: ridge;
+        border-radius: 50px;
+        background-color: khaki;
+        text-align: center;
+        height: 50%;
+        width: 50%;
+        margin: auto;
+    }
+    h3 {
+        text-align: left;
+    }
+    form {
+        background-color: antiquewhite;
+        border-style: double;
+        width: 500px;
+        margin: auto;
+    }
+
+    p {
+        text-align: center;
+    }
+</style>
+<script>
+
+    function User() {
+        //Name variables
+        var nameCheck  = "Enter a name";
+
+        //Age Variables
+        var ageCheck = false;
+        var ageValue = "";
+
+        //Checkbox Variables
+        var boxCheck = false;
+        var boxValue = " ";
+
+        //Select Variables 
+        var list = document.forms["myform"].elements["Status"].selectedIndex;
+        var listValue = "";
+
+        // Varibales "result" of the all data are collected.
+        var vaild = "Thanks, your data was submitted!";
+
+
+        //The users "name" Statement
+        var name = document.getElementById("name").value;
+
+        if (name == "" || name == null) {
+            document.getElementById("nameUser").innerHTML = nameCheck;
+            vaild = "";
+        } else {
+            document.getElementById("nameUser").innerHTML = " ";
+        }
+
+        //The users "age range" Statement
+        for (var i = 0; i < 3; ++i) {
+
+            if (document.myform.rating[i].checked) {
+                ageCheck = true;
+                ageValue = document.myform.rating[i].value;
+                break;
+            }
+        } 
+            if (ageCheck == false) {
+            document.getElementById("ageUser").innerHTML = "Enter your age.";
+            vaild = " ";
+        } else {
+            document.getElementById("ageUser").innerHTML = " ";
+        }
+
+        //The User "Checkbox" Statement
+        for(var i = 0; i < 4; ++i) {
+
+            if (document.myform.checked[i].checked) {
+                boxCheck = true;
+                boxValue = document.myform.checked[i].value;
+                break;
+            }
+        }
+            if (boxCheck == false) {
+                document.getElementById("CheckUser").innerHTML = "Please, select which browsers are you using.";
+                vaild = " ";
+            } else {
+                document.getElementById("CheckUser").innerHTML = "You using " + boxValue;
+            }
+
+
+        //The User "Select" Statement
+        if (list < 1) {
+            document.getElementById("selecteUser").innerHTML = "Please, Select your moive!";
+            vaild = " ";
+        } else {
+            listValue = document.forms["myform"].elements["Status"].value;
+            document.getElementById("selecteUser").innerHTML = "Your favorite moive is - " + listValue;
+        }
+
+
+        //After All the data is submitted.
+        document.getElementById("result").innerHTML = vaild;
+
+    }
+
+    //Reset Statement
+    function res() {
+        document.getElementById("nameUser").innerHTML = " ";
+        document.getElementById("ageUser").innerHTML = " ";
+        document.getElementById("CheckUser").innerHTML = " ";
+        document.getElementById("selecteUser").innerHTML = " ";
+    }
+
+</script>
+</head>
+
+<body>
+    <h1> Array Part 1: Array input List</h1>
+
+    <br><br>
+    
+    <form id="myform" name="myform">
+        <!--The Full Name of the user.-->
+        <h3> Full Name: </h3>
+        <table>
+            <!--The "Text" to input the Full Name.-->
+            <tr>
+            <td> Name: </td>
+            <td> <input type="text" name="name" id="name" size="25"></td>
+            <td><div id="nameUser"> </div></td>
+            </tr>
+        </table>
+        <br>
+        <!--The Age of the user.-->
+        <h3> Age of the User: </h3>
+        <table>
+            <!--Using the "Radio" in the table.-->
+            <tr>
+                <td><input type="radio" name="rating" id="age1"></td>
+                <td><label for="age1"> less than 21 </label></td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="rating" id="age2"></td>
+                <td><label for="age2"> between 21 and 50 </label></td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="rating" id="age3"></td>
+                <td><label for="age3"> older than 50 </label></td>
+            </tr>
+        </table>
+        <div id="ageUser"> </div>
+        <br>
+        <!--The Checkbox of which type of browers are the user is using.-->
+        <h3> Checkbox: Which browsers are the users is using.</h3>
+        <table>
+            <!--Using the "CheckBox" in this table.-->
+            <tr>
+                <td><input type="checkbox" name="checked" id="check1" value="Firefox"></td>
+                <td><label for="check1"> Firefox </label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="checked" id="check2" value="Window Edge"></td>
+                <td><label for="check2"> Window Edge </label></td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="checked" id="check3" value="Chrome"></td>
+                <td><label for="check3"> Chrome </label></td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="checked" id="check4" value="Safari"></td>
+                <td><label for="check4"> Safari </label></td>
+            </tr>
+        </table>
+        <div id="CheckUser"></div>
+        <br>
+        <!--The Select of Moive -->
+        <h3> Movie Type: Which Movie gernal is the user liked?</h3>
+
+        <table>
+            <tr>
+            <td>
+        <select name="Status">
+                <option value=" "> Type of Movie </option>
+                <option value="Action"> Action </option>
+                <option value="Comedy"> Comedy </option>
+                <option value="Drama"> Drama </option>
+                <option value="Dcoumentary"> Dcoumentary </option>
+                <option value="Science Fiction"> Science Fiction </option>
+        </select>
+        </td>
+        <td><div id="selecteUser"></div></td>
+            </tr>
+        </table>
+        <br>
+        <table>
+        <tr>
+        <td><input type="button" onclick="User()" value="Submit"></td>
+        <td><input type="reset" value="Reset" onclick="window.location.reload()"></td>
+        </tr>
+        </table>
+        <br>
+        <div id="result"> </div>
+    </form>
+    <br>
+    <h2><a href="Hw5.html"> Homework 5 Webpage </a></h2>
+</body>
+</html>
