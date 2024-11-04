@@ -77,63 +77,11 @@ function selectState() {
     <h1> Homework 5 part 3: Data State List </h1>
 <section>
     <!--The Table of the State -->
-    <h3> Names of the State:</h3>
-    <table>
-        <tr>
-            <!-- Header of the Table-->
-            <th>State Abbr </th>
-            <th>State Name </th>
-            <th>Capital </th>
-            <th>Population </th>
-        </tr>
-        <tr>
-            <!-- Alabama Data -->
-            <td> AL </td>
-            <td> Alabama </td>
-            <td> Montgomery </td>
-            <td> 4,903,185</td>
-        </tr>
-        <tr>
-            <!-- Alaska Data -->
-            <td> AK </td>
-            <td> Alaska </td>
-            <td> Juneau </td>
-            <td> 732,545 </td>
-        </tr>
-        <tr>
-            <!-- Arizona Data -->
-            <td> AZ </td>
-            <td> Arizona </td>
-            <td> Phoenix </td>
-            <td> 7,278,717 </td>
-        </tr>
-        <tr>
-            <!-- Arkansas Data -->
-            <td> AR </td>
-            <td> Arkansas </td>
-            <td> Little Rock </td>
-            <td> 3,017,825 </td>
-        </tr>
-        <tr>
-            <!-- California Data -->
-            <td> CA </td>
-            <td> California </td>
-            <td> Sacramento </td>
-            <td> 39,512,223 </td>
-        </tr>
-        <tr>
-            <!-- Colorado Data -->
-            <td> CO </td>
-            <td> Colorado </td>
-            <td> Denver </td>
-            <td> 5,758,736 </td>
-        </tr>
-    </table>
-    <br>
+    <h3> States from the July/2019 Cenus! </h3>
     <!-- The users input of the data -->
     <label> Enter State Name: </label>
     <form name="SearchName">
-        <input type="text" size="15" name="stateInput" autofocus>
+        <input type="text" size="30" name="stateInput" placeholder="CA or California " autofocus>
         <input onclick="selectState();" type="button" value="State Info" name="input">
         <input type="reset" onclick="location.reload();">
     <br><br>
