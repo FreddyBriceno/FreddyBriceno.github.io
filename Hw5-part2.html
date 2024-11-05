@@ -10,16 +10,36 @@
     body {
         background-color: antiquewhite;
     }
+
 h1 {
     text-align: center;
-
-}
-
+    border-style: solid; 
+    background-color: lightblue;
+    margin: auto;
+    width: 500px;
+    }
 h2 { 
+    border-style: ridge;
+    border-radius: 50px;
+    background-color: khaki;
     text-align: center;
+    height: 50%;
+    width: 50%;
+    margin: auto;
 }
 
+select {
+    margin: auto;
+    width: 100px;
+    display: flex;
+}
 
+input {
+    text-align: center;
+    margin: auto;
+    width: 50px;
+    display: flex;
+}
 </style>
 <script>
     //The First function is OnChange Events, which uses the "option[] Arrays". 
@@ -39,8 +59,9 @@ h2 {
 </script>
 </head>
 <body>
-<h1> Array pulldown menu </h1>
 
+<h1> Pulldown Menu </h1>
+<br>
 <h1> Using "onChange" in this pulldown menu</h1>
 <form id="DataList">
     <!-- The "onChange" lets users select and go directly to the website.-->
@@ -66,6 +87,7 @@ h2 {
 <br>
 <input type="button" name="Submit" onclick="selectClick(this.form);" value="Click It">
 </form>
+<br>
     <h2><a href="Hw5.html"> Homework 5 webpage</a></h2>
 </body>
 </html>
