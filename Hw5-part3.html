@@ -7,28 +7,55 @@
 <title> Homework 5 Array part 3: Data State List </title>
 
 <style>
-
     h1 {
         text-align: center;
+        border-style: solid;
+        background-color: white;
+        margin: auto;
+        width: 500px;
     }
 
     h2 {
+        border-style: ridge;
+        border-radius: 10px;
+        background-color: lightblue;
         text-align: center;
+        height: 50%;
+        width: 50%;
+        margin: auto;
+    }
+
+    h3 {
+        border-style: ridge;
+        border-radius: 50px;
+        background-color: khaki;
+        text-align: center;
+        height: 50%;
+        width: 50%;
+        margin: auto;
     }
     body {
         background-color: antiquewhite;
 
     }
-
-    table, td, th {
-        border-collapse: collapse;
-        border-style: solid;
-        width: 30%;
+    label {
+        margin: auto;
+        width: 150px;
+        display: flex;
     }
 
-    tr:nth-child(odd) {
-        background-color: lightcyan;
+    input {
+        margin: auto;
+        width: 150px;
+        display: flex;
     }
+
+    textarea {
+        margin: auto;
+        display: flex;
+    }
+
+
 </style>
 
 <script>
@@ -75,21 +102,25 @@ function selectState() {
 </head>
 <body>
     <h1> Homework 5 part 3: Data State List </h1>
+    <br>
 <section>
     <!--The Table of the State -->
-    <h3> States from the July/2019 Cenus! </h3>
+    <h2> States from the July/2019 Cenus! </h2>
+    <br>
     <!-- The users input of the data -->
     <label> Enter State Name: </label>
     <form name="SearchName">
         <input type="text" size="30" name="stateInput" placeholder="CA or California " autofocus>
+        <br>
         <input onclick="selectState();" type="button" value="State Info" name="input">
-        <input type="reset" onclick="location.reload();">
+        <input type="reset" value="Reset" onclick="location.reload();">
     <br><br>
     <!--The Result of the lsit States -->
-    <label for="result"> Result of the State:</label><br>
+    <label for="result"> Result of the State:</label>
     <textarea rows="7" cols="50" id="result" name="result"></textarea>
     </form>
+    <br>
 </section>
-    <h2><a href="Hw5.html"> Homework 5 webpage</a></h2>
+    <h3><a href="Hw5.html"> Homework 5 webpage</a></h3>
 </body>
 </html>
