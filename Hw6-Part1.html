@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 6 Part 1" content="JavaScript assignments Homework 6 part 1 webpage Freddy at CSM">
+
+<title> Homework 6 Part 1: Math object </title>
+<style>
+
+    body{
+        background-color: azure;
+    }
+
+    h1 {
+        text-align: center;
+        border-style: solid;
+        background-color: white;
+        margin: auto;
+        width: 500px;
+    }
+</style>
+
+<script>
+
+function objectNumber() {
+
+    let re = new RegExp("^[0-9]{1,}\.[0-9]{4,}$");
+    let errMsg = "You need to type a number with at least 4 decimals, Please try again.";
+
+    if ((document.getElementById("number").value) == "" || 
+    (!(re.test(document.getElementById("number").value)))) 
+    {
+        document.getElementById("result").value = errMsg;
+    }
+    else {
+
+        var decimal = parseFloat
+        (document.getElementById("number").value);
+
+        //The display of the result.
+        document.myForm.result.value =
+        "The entered number: " + decimal +
+        "\n\tRounded to the nearest integer using math round: " +
+        roundToIntegerRound(decimal) + 
+        "\n\tRounded square root to nearest integer: " +
+        roundSquareRootToIntegerFloor(decimal) +
+        "\n\tRounded to the nearest Tenth: " +
+        roundToTenthsTofixed(decimal) +
+        "\n\tRounded to the nearest Hundreth: " +
+        roundToHundredthsFloor(decimal) +
+        "\n\tRounded to the nearest Thousandths: " +
+        roundToThousandthsRound(decimal);
+    } 
+}
+
+//Using the Math method using "round" the Number.
+function roundToIntegerRound(number) {
+    return (Math.round(number));
+}
+
+//Using the Math method using "floor" and "sqrt" to square root the number.
+function roundSquareRootToIntegerFloor(number) {
+    return (Math.floor (Math.sqrt (number) + .5));
+}
+
+//Using the Math method using "toFixed" to round the nearest tenths place.
+function roundToTenthsTofixed(number) {
+    return (number.toFixed(1));
+}
+
+//Using the Math method using "floor" to round the nearest Hundredths place.
+function roundToHundredthsFloor(number) {
+    return (Math.floor(number * 100 + .5) / 100);
+}
+
+//Using the Math method using "round" to round the nearest Thousandths place.
+function roundToThousandthsRound(number) {
+    return (Math.round(number * 1000) / 1000);
+}
+
+//The reset the webpage and using the buttion to clear the textarea.
+function res() {
+    document.getElementById("number").focus();
+}
+
+</script>
+</head>
+
+<body>
+    <h1> Homework 6 Part 1: Math Object </h1>
+
+    <form name="myForm">
+        <label for="number"> Enter a number with at 4 decimal</label><br>
+        <input type="text" id="number"><br>
+        <input type="button" value="Calculate" onclick="objectNumber()"><br>
+        <textarea name="result" id="result" rows="8" cols="60" readonly></textarea><br>
+        <input type="reset" value="Reset" onclick="res();">
+    </form>
+    <h1><a href="Hw6.html"> Homewok 6 Main page</a></h1>
+</body>
+</html>

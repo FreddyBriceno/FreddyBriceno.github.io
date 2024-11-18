@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 6 Part 2" content="JavaScript assignments Homework 6 part 2 webpage Freddy at CSM">
+
+<title> Homework 6 Part 2: Long Content </title>
+<style>
+
+    body{
+        background-color: azure;
+    }
+
+    
+    h1 {
+        text-align: center;
+        border-style: solid;
+        background-color: white;
+        margin: auto;
+        width: 500px;
+    }
+
+</style>
+
+<script>
+
+    function countLetter() {
+
+        var count = 0;
+        const letter = document.getElementById("letter").value.toLowerCase().charAt(0);
+        const longContent = document.getElementById("longContent").value.toLowerCase();
+
+
+        for (i = 0; i < longContent.length; i++) {
+            if( longContent.charAt(i) == letter)
+            count++
+        }
+        if (count == 0 || count == " ") {
+
+            //create an popup error message
+            var myWindow = "<html>\n";
+           myWindow += "<head>\n";
+           myWindow += "<title>Window Error </title>\n";
+           myWindow += "</head>\n";
+           myWindow += "<body>\n";
+           myWindow += "<div align='center'>\n";
+           myWindow += "<h4> letter  " + letter + " occurs 0 times </h4>\n";
+           myWindow += "<input type='button' value='Close Window' onclick='window.close()'>\n";
+           myWindow += "</div>\n";
+           myWindow += "</body>\n";
+           myWindow += "</html>";
+        
+          // open window on the upper right of the screen
+          var errWindow = window.open("", "new_window", "top=220,left=50,width=300,height=100");
+          
+          errWindow.focus();
+
+         // pump html into to this new opened window
+               errWindow.document.write(myWindow);
+
+          // tell browser that errWindow document is finished loading
+               errWindow.document.close();
+        } else {
+            document.getElementById("result").value = count + " occurrence(s) of " + letter + " found ";
+        }
+
+    }
+
+    function res() {
+        document.getElementById("result").value = "";
+    }
+</script>
+</head>
+
+<body>
+    <h1> Homework 6 Part 2: Long Content </h1>
+
+    <!-- The Main Content to input Long Content -->
+    <form name="content">
+        <label>Enter in your sentence in the textbox</label><br>
+        <textarea id="longContent"></textarea><br>
+        <label>Enter a character to search:</label><br>
+        <input id="letter" type="text" maxlength="1"><br>
+        <input type="button" value="Search" onclick="countLetter()">
+        <input type="reset" value="Reset" onclick="res()"><br>
+        <label> The Result:</label><br>
+        <textarea id="result" rows="3" cols="30"></textarea>
+    </form>
+    <br>
+    <h1><a href="Hw6.html"> Homewok 6 Main page</a></h1>
+</body>
+</html>

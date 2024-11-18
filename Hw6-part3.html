@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 6 Part 3" content="JavaScript assignments Homework 6 part 3 webpage Freddy at CSM">
+
+<title> Homework 6 Part 3: Type of Phone Number </title>
+<style>
+
+    body{
+        background-color: azure;
+    }
+
+    h1 {
+        text-align: center;
+        border-style: solid;
+        background-color: white;
+        margin: auto;
+        width: 500px;
+    }
+    textarea {
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    function phoneInput() {
+
+        const phoneFormat = document.getElementById("number").value;
+
+        //The Regular Expression that create to use validate when the correct format.
+        phoneRegExp = /^(\()(\d{3})(\))(\s)(\d{3})(-\d{4})$/;
+
+        if (! phoneRegExp.test(phoneFormat) )
+
+        //If the phone number format is incorrect, the error message will show up on the display.
+        document.getElementById("result").value = "The phone number is incorrect, please use (999) 999-9999 as Examples.";
+        else {
+            //If the phone number format is correct, it will display the result.
+            document.getElementById("result").value = "The Phone Number:" + phoneFormat + 
+            " vaild.\nThank you for the Phone number.\nYou should expect to be contacted by one the agents in the future.";
+        }
+        
+    }
+
+    function res() {
+
+            //reset the the textarea and webpage.
+            document.getElementById("result").value = "";
+            document.getElementById("number").value = "";
+
+    }
+</script>
+</head>
+
+<body>
+
+    <h1> Homework 6 Part 3: Type of Phone Number </h1>
+
+    <!--The main page for Users input the Phone Number.-->
+    <label>Enter an Phone Number: (999) 999-9999 </label><br>
+    <input id="number" type="text"><br><br>
+    <label>The Result of Phone Number</label><br>
+    <textarea id="result" rows="4" cols="50"> </textarea><br>
+    <input type="button" value="Start" onclick="phoneInput()">
+    <input type="reset" value="Clear" onclick="res()">
+    
+    <h1><a href="Hw6.html"> Homewok 6 Main page</a></h1>
+
+</body>
+</html>
