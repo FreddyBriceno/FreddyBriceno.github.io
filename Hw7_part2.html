@@ -2,13 +2,13 @@
 <html lang= "en">
 <head>
 <meta charset= "utf-8">
-<meta name="Homework 6 Part 2" content="JavaScript assignments Homework 7 part 2 webpage Freddy at CSM">
+<meta name="Homework 7 Part 2" content="JavaScript assignments Homework 7 part 2 webpage Freddy at CSM">
 
 <title> Homework 7 Part 2: Cookie Data</title>
 
 <script>
 
-    //create the name and username in the document.cookie
+    //Create the name and username in the document.cookie
     function setCookie() {
         let name = document.getElementById("Name").value;
         let username = document.getElementById("UserName").value;
@@ -17,7 +17,7 @@
 
     }
 
-    //The get 
+    //This function is split the name and username out of document.cookie.
     function getCookie(key) {
         var Cname = key + "=";
         var CN = document.cookie.split(";");
@@ -39,10 +39,10 @@
         username = getCookie("UserName");
         if( name != "" && username != "") {
             document.getElementById("output").innerHTML = "Welcome back " + name;
-            //make the not Visible 
+            //Make the not Visible 
             document.getElementById("myName").style.display = "none";
         } else {
-            //make the form Visible 
+            //Make the form Visible 
             document.getElementById("myName").style.display = "block";
         }
     }
