@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 7 Part 2" content="JavaScript assignments Homework 7 part 1 webpage Freddy at CSM">
+
+<title> Homework 7 Part 1: Object Model</title>
+
+<script>
+
+    //Change the background-color to the body of the webpage.
+    function backgroundStyle(Bstyle) {
+        let background = document.getElementById("paragraphs");
+        if ( Bstyle == 0) {
+            background.className = "Blue";
+        } else if ( Bstyle == 1) {
+            background.className = "Light_Green";
+        } else if (Bstyle == 2 ) {
+            background.className = "Pink";
+        }
+    }
+
+    //Change font style with differnet style in the paragraphs.
+    function fontStyleChange(Fstyle) {
+        let font = document.getElementById("paragraphs");
+        if (Fstyle == 0) {
+            font.className = "bold";
+        } else if (Fstyle == 1) {
+            font.className = "italic";  
+        } else if (Fstyle == 2) {
+            font.className = "underline";
+        }
+    }
+
+    //The font that change the paragraphs size smaller to larger.
+    function fontSizeDropDown() {
+        let paragraphs= document.getElementById("paragraphs");
+        let fontSizeDropDown = document.getElementById("DropDown").value;
+
+        if (fontSizeDropDown == "small") {
+            paragraphs.className = "small paragraphs";
+        } else if (fontSizeDropDown == "medium") {
+            paragraphs.className = "medium paragraphs";
+        } else if (fontSizeDropDown == "large") {
+            paragraphs.className = "large paragraphs"
+        }
+
+    }
+
+</script>
+<style>
+
+    body{
+        background-color: azure;
+    }
+
+    
+    h1 {
+        text-align: center;
+        border-style: solid;
+        background-color: white;
+        margin: auto;
+        width: 500px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+
+    div {
+        text-align: center;
+        border-style: double;
+        width: 60%;
+        margin: auto;
+    }
+
+    .Blue {
+        background-color: #4db2da;
+    }
+
+    .Light_Green {
+        background-color: #65e765;
+    }
+
+    .Pink {
+        background-color: #FFC0CB;
+    }
+
+    .bold {
+        font-weight:bold;
+    }
+
+    .italic {
+        font-style:italic;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+
+
+    .small {
+        font-size: 15px;
+    }
+
+    .medium {
+        font-size: 20px;
+    }
+
+    .large {
+        font-size: 25px;
+    }
+
+</style>
+</head>
+<body id="body">
+    
+    <h1>  Homework 7 Part 1: object  </h1>
+
+
+    <p> This (box) to change "Font-Style" and "Font-Size" and even the "background chenge color"</p>
+    <div id ="paragraphs"> 
+        Welcome to create to use the Radio, checkbox, and select. <br>
+        radio buttons for the user to select the color of the background to be applied.<br>
+        select element to create a drop-down list where you will allow the user to select the font-size<br>
+        checkboxes that will allow the user to choose change these color in the select.
+    </div>
+    <br>
+
+<form name="myForm">
+    <!--Radio the change the background color.-->
+    <label> Select the Color of the background: </label><br>
+    <input type="radio" name="Bstyle" onclick="backgroundStyle(0)"> Blue<br>
+    <input type="radio" name="Bstyle" onclick="backgroundStyle(1)"> Light Green <br>
+    <input type="radio" name="Bstyle" onclick="backgroundStyle(2)"> Pink <br>
+    <br>
+    <!--Checkbox to change the style of the font.-->
+    <label> Choose an Font style: </label><br>
+    <input type="checkbox" name ="Fstyle" onclick="fontStyleChange(0)"> bold <br>
+    <input type="checkbox" name ="Fstyle" onclick="fontStyleChange(1)"> italic <br>
+    <input type="checkbox" name ="Fstyle" onclick="fontStyleChange(2)"> underline <br>
+    <br>
+    <!--Select elements to size the font.-->
+    <label> Select font size:</label><br>
+    <select name="DropDown" id="DropDown" onchange="fontSizeDropDown()">
+        <option value="#"> Select Font-Size </option>
+        <option value="small"> Small </option>
+        <option value="medium"> medium </option>
+        <option value="large"> large </option>
+    </select>
+</form>
+    <h1><a href="Hw7.html"> Homework 7 Main page</a></h1>
+</body>
+</html>
