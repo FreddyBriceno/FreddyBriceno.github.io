@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 6 Part 2" content="JavaScript assignments Homework 7 part 2 webpage Freddy at CSM">
+
+<title> Homework 7 Part 2: Cookie Data</title>
+
+<script>
+
+    //create the name and username in the document.cookie
+    function setCookie() {
+        let name = document.getElementById("Name").value;
+        let username = document.getElementById("UserName").value;
+        document.cookie =  "Name=" + name;
+        document.cookie = "UserName=" + username;
+
+    }
+
+    //The get 
+    function getCookie(key) {
+        var Cname = key + "=";
+        var CN = document.cookie.split(";");
+        for(var i = 0; i < CN.length; i++) {
+            var cookie = CN[i];
+            while (cookie.charAt(0) == " ") {
+                cookie  = cookie.substring(1);
+            }
+            if(cookie.indexOf(Cname) == 0 ) {
+                return cookie.substring(Cname.length, cookie.length);
+            }
+        }
+        return "";
+    }
+
+    //Check the if the cookie is now inside the checkCookie
+    function checkCookie() {
+        name = getCookie("Name");
+        username = getCookie("UserName");
+        if( name != "" && username != "") {
+            document.getElementById("output").innerHTML = "Welcome back " + name;
+            //make the not Visible 
+            document.getElementById("myName").style.display = "none";
+        } else {
+            //make the form Visible 
+            document.getElementById("myName").style.display = "block";
+        }
+    }
+</script>
+<style>
+
+    body{
+        background-color: azure;
+    }
+
+
+    h1 {
+        text-align: center;
+        border-style: solid;
+        background-color: white;
+        margin: auto;
+        width: 500px;
+    }
+    h2 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+        text-decoration: underline;
+
+    }
+
+    div{
+        text-align: center;
+    }
+
+</style>
+
+</head>
+
+<body onload="checkCookie()">
+    <h1>  Homework 7 Part 2: Cookie Data  </h1>
+
+    <p>Please Enter you <b>Name</b> and create a <b>Username</b> to put them in the Storage.</p>
+    <div id="result">
+    <form id="myName" name="myName">
+    <!--Name place for the users in their name.-->
+    <label> Name: </label><br>
+    <input type="text" id="Name" name="Name" size="20" maxlength="20" placeholder="Name"><br>
+    <!-- UserName to create the a Second name for the input.-->
+    <label> Username: </label><br>
+    <input type="text" id="UserName" name="UserName" size="20" maxlength="20" placeholder="UserName"><br>
+    <input type="button" value="Sumbit" onclick="setCookie()">
+    <input type="reset" value="Reset">
+    </form>
+    </div>
+    <!--The reuslt of show the welcome back sign-->
+    <div id="output"></div>
+    <h1><a href="Hw7.html"> Homework 7 Main page</a></h1>
+</body>
+</html>
