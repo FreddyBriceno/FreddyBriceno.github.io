@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+<meta charset= "utf-8">
+<meta name="Homework 8 webpage" content="JavaScript assignments Homework 8 webpage webpage Freddy at CSM">
+
+<title> Homework 8 </title>
+
+<style>
+
+body {
+    background-color: whitesmoke;
+}
+
+h1 {
+    background-color: lightgray;
+    border: solid lightblue;
+    font-size: 200%;
+    height: 50%;
+    width: 50%;
+    border-width: 5px;
+    text-align: center;
+    margin: auto;
+
+}
+h2 {
+    text-decoration: underline;
+}
+h3 {
+    border-style: ridge;
+    background-color: honeydew;
+    font-size: 170%;
+    border-radius: 50px;
+    height: 50%;
+    width: 50%;
+    border-width: 5px;
+    text-align: center;
+    margin: auto;
+}
+
+p {
+    font-size: 90%;
+}
+
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+
+<script>
+</script>
+</head>
+<body>
+    <!-- heading of this applications -->
+    <h1> Homework 8: Ajax Applications </h1>
+    <!-- CD Artist List -->
+<form id="myCD">
+     <label id="CD">The list of CD Artist:</label><br>
+    <input type="button" onclick="displayArtist()" id="CD" value="Get CD collection">
+    <table id="art"></table>
+    <script>
+        //Function to dispaly the list of CD collect file.
+       function displayArtist() {
+        const xhttp = new XMLHttpRequest(); 
+            xhttp.onload = function() {
+                myTable(this);
+            }
+            xhttp.open("GET","cd_catalog.xml");
+            xhttp.send();
+        }
+        //display table of CD Artist in the browser.
+        function myTable(xml) {
+            const xmlDoc = xml.responseXML;
+            const x = xmlDoc.getElementsByTagName("CD");
+            let table="<tr><th>Artist</th><th>Title</th><th>Year</th></tr>";
+            for (let i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                "</td><td>" + x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                "</td><td>" + x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+            }
+            document.getElementById("art").innerHTML = table;
+        }
+    </script>
+</form>
+    <!--Explanation of AJAX-->
+    <!--paragraphs to explain what is happening with the JavaScript, AJAX code you see in the .html file-->
+    <h2>Explanantion of AJAX </h2>
+    <p>The AJAX application's code has the artist list from a different file with .xml in the document.<br>
+     After clicking the button, it displays the ARTIST's name, the TITLE, and the YEAR the song was created.</p>
+
+
+<form>
+
+    <!--REST API -->
+<h2>REST API </h2>
+    <label id="api"></label>
+    <input type="text" onclick="" id="api" placeholder="Enter"">
+    <input type="button">
+    
+    
+<p>
+    What type of response file you get (JSON, XML, etc)<br>
+
+    Do you need any type of key to access and use the API?<br>
+
+    Do the companies need to pay any fee to use the API and if they need, how is that charged?<br>
+
+    You need also to provide a link to any type of documentation that would help the developer use the API.<br>
+</p>
+<script>
+    
+</script>
+
+</form>
+        <!-- Link to Homework 1 webpage -->
+    <h3><a href="Homework1.html"> Main page </a></h3>
+
+</body>
+</html>
