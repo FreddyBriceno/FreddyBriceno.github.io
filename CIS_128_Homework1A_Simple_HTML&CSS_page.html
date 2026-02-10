@@ -4,21 +4,29 @@
         <meta charset="utf-8">
         <title>Homework 1 Simple HTML & CSS</title>
         <meta name = "description" content="webpage_of_Simple_HTML_and_CSS">
-        <link rel="stylesheet" href="/CIS_128_Homework1A_Simple_HTML&CSS_page_style.css">
+        <link rel="stylesheet" href="/CIS-128-Homework_1/style/CIS_128_Homework1A_Simple_HTML&CSS_page_style.css">
         <!--jQuery -->
         <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
         <script>
             //font-size and change the color on the heading.
         $(document).ready(function() {
-            $("button").click(function() {
+            //$("button").click(function() {
+                //$("h1").animate({"font-size":"+=1rem"},3000);
+                //$("h1").animate({"font-size":"-=1rem"},3000);
+                //$("h1").css("color", "red");
+                //var timer = setTimeout(function() { $("h1").css("color","black")}, 4500);
+                //the border in the picture.
+                //$("#profile").addClass("img-border");
+
+            //});
+            $("#btnAnimation").on("click", function() {
                 $("h1").animate({"font-size":"+=1rem"},3000);
                 $("h1").animate({"font-size":"-=1rem"},3000);
                 $("h1").css("color", "red");
                 var timer = setTimeout(function() { $("h1").css("color","black")}, 4500);
-                //the border in the picture.
                 $("#profile").addClass("img-border");
-            });
 
+            })
         });
         </script>
     </head>
@@ -32,7 +40,7 @@
         <main>
             <!--Introduction webpage -->
             <h2>Attending this Class</h2>
-                <img src="/ImagesFiles/profile_picture2.jpg" alt="profile_image2" id="profile">
+                <img src="/CIS-128-Homework_1/image/profile_picture2.jpg" alt="profile_image2" id="profile">
                     <p> 
                         My name is Freddy Briceno, I am from the Untied States. 
                         I am student of College of San Mateo for more than 2 years take this career path.
@@ -69,7 +77,7 @@
                 </nav>
                 <br>
                 <!-- font size, change color in heading of the page. -->
-                 <button>Start Animation</button>
+                 <button id="btnAnimation">Start Animation</button>
         </main>
     </body>
 </html>
