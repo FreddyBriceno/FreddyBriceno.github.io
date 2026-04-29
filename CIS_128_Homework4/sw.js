@@ -1,12 +1,12 @@
 const CACHE_NAME = 'CacheA';
 const urlsToCache = [
     '/',
-    '/CIS-128-Homework4/Html/index.html',
-    '/CIS-128-Homework4/image/lightblue01.jpg',
-    '/CIS-128-Homework4/image/lightgold01.jpg',
-    '/CIS-128-Homework4/style/style.css',
-    '/CIS-128-Homework4/sw.js',
-    '/CIS-128-Homework4/manifest.json',
+    '/CIS_128_Homework4/Html/index.html',
+    '/CIS_128_Homework4/image/lightblue01.jpg',
+    '/CIS_128_Homework4/image/lightgold01.jpg',
+    '/CIS_128_Homework4/style/style.css',
+    '/CIS_128_Homework4/sw.js',
+    '/CIS_128_Homework4/manifest.json',
 ];
 
 // Install event: Caches static assets
