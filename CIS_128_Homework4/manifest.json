@@ -1,0 +1,39 @@
+{
+    "name": "Basic PWA",
+    "short_name": "BasicPWA",
+    "start_url":"/CIS-128-Homework4/Html/index.html",
+    "display":"standalone",
+    "background_color":"#FFFFFF",
+    "theme_color": "#FFFFFF",
+    "Description": "The ",
+    "orientation":"portrait-primary",
+    "screenshots":[
+        {
+            "src":"/CIS-128-Homework4/image/icon/Pwa_icon-384_01.png",
+            "size":"384x384",
+            "type":"image/png",
+            "form_factor":"narrow",
+            "label":"Mobile Device"
+        },
+        {
+            "src":"/CIS-128-Homework4/image/icon/Pwa_icon-512_01.png",
+            "size":"512x512",
+            "type":"image/png",
+            "form_factor":"wide",
+            "label":"Desktop Dashboard"
+        }
+
+    ],
+    "icons": [
+        {
+            "src":"/CIS-128-Homework4/image/icon/Pwa_icon-384_01.png",
+            "size":"384x384",
+            "type":"image/png"
+        },
+        {
+            "src":"/CIS-128-Homework4/image/icon/Pwa_icon-512_01.png",
+            "size":"512x512",
+            "type":"image/png"
+        }
+    ]
+}
