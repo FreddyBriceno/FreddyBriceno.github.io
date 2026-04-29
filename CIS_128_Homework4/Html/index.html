@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CIS-128-Homework4/style/style.css">
+    <!--manifest link-->
+    <link rel="manifest" href="/CIS-128-Homework4/manifest.json">
+    <title>Progressive Web Application (PWA)</title>
+</head>
+<body>
+    <header>
+        <h1>Progressive Web Application (PWA) Webpage</h1>
+    </header>
+    <main>
+        <br>
+        <div id="character">
+        <!--Two of main characteristics of Progressive Web Application (PWA) -->
+        <h1> Characteristics of Progressive Web Application </h1>
+        <br>
+        <h2>Offline possibility:</h2>
+        <p> service workers cache the necessary content for the PWA application and serve it afterward.</p>
+        <p> This feature makes PWA offline-capable as users can still interact with the application even offline. </p>
+        <p> The offline access was previously possible with Application Cache.</p>
+        <br>
+        <h2>Native App:</h2>
+        <p> Service workers serve as the base for more app-like feature such as push notification and background sync. </p>
+        </div>
+        <!--switch the background image-->
+        <br>
+        <div>
+            <label for="bgSelect">Select Background:</label>
+        <select id="bgSelect" onchange="changeBackground()">
+            <option value="default">Default</option>
+            <option value="light-blue">Light Blue</option>
+            <option value="light-gold">Light Gold</option>
+        </select>
+        </div>
+
+        <script>
+        function changeBackground() {
+            // Get the select element
+            const selectElement = document.getElementById('bgSelect');
+            const selectedValue = selectElement.value;
+            const body = document.body;
+
+            // Remove existing background classes
+            body.classList.remove('light-blue', 'light-gold');
+
+            // Apply the selected class
+            if (selectedValue === 'light-blue') {
+                body.classList.add('light-blue');
+            } else if (selectedValue === 'light-gold') {
+                body.classList.add('light-gold');
+            }
+        }
+    </script>
+    <script>
+         if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/CIS-128-Homework4/sw.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+    </main>
+</body>
+</html>
