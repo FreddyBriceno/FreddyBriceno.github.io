@@ -16,12 +16,12 @@ body {
 /* Classes to be applied by JS */
 body.light-blue {
     background-color: #add8e6;
-    background-image: url(/CIS-128-Homework4/image/lightblue01.jpg); /* Can be changed to url() to get background image display on the page. */
+    background-image: url(/CIS_128_Homework4/image/lightblue01.jpg); /* Can be changed to url() to get background image display on the page. */
 }
 
 body.light-gold {
     background-color: #fafad2;
-    background-image: url(/CIS-128-Homework4/image/lightgold01.jpg); /* Can be changed to url() to get background image display on the page. */
+    background-image: url(/CIS_128_Homework4/image/lightgold01.jpg); /* Can be changed to url() to get background image display on the page. */
 }
 
 .character {
