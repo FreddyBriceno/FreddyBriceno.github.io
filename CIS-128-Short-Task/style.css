@@ -18,17 +18,18 @@ header {
 }
 
 #rn-name{
-    color: #61DBFB;
+    color: #3498db;
 }
 
 .container {
     display: grid;
     grid-template-columns: auto;
-    gap: 1rem;
+    gap: 0rem;
     border-style: solid;
     margin-bottom: 2rem;
-    background-color: azure;
+    background-color: #E6E6FA;
     padding: 1.5rem;
+    border-radius: 3rem;
     
 }
 
